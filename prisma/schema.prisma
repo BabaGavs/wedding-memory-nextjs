@@ -1,0 +1,27 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Table {
+  id          Int         @id @default(autoincrement())
+  name        String
+  qr_code     String      @unique
+  created_at  DateTime    @default(now())
+  media_files MediaFile[]
+}
+
+model MediaFile {
+  id                Int      @id @default(autoincrement())
+  table_id          Int
+  filename          String
+  original_filename String
+  file_type         String   // photo, video, audio, text
+  description       String?
+  created_at        DateTime @default(now())
+  table             Table    @relation(fields: [table_id], references: [id], onDelete: Cascade)
+}

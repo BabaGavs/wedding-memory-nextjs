@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "name": "wedding-memory-nextjs",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/next"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ],
+  "env": {
+    "PRISMA_DATABASE_URL": "file:./dev.db"
+  }
+}
