@@ -3,13 +3,13 @@ import { prisma } from '@/lib/prisma'
 
 export async function POST(
   request: NextRequest,
-  { params }: { params: { qrCode: string } }
+  { params }: { params: Promise<{ qrCode: string }> }
 ) {
   try {
     const formData = await request.formData()
     const file = formData.get('file') as File
     const description = formData.get('description') as string
-    const { qrCode } = params
+    const { qrCode } = await params
 
     if (!file) {
       return NextResponse.json(
