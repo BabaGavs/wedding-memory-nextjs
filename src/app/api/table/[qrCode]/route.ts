@@ -3,10 +3,10 @@ import { prisma } from '@/lib/prisma'
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: Promise<{ qrCode: string }> }
+  { params }: { params: { qrCode: string } }
 ) {
   try {
-    const { qrCode } = await params
+    const { qrCode } = params
     console.log('API: Looking for table with QR code:', qrCode)
 
     const table = await prisma.table.findUnique({
