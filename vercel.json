@@ -6,11 +6,6 @@
   "installCommand": "npm install",
   "framework": "nextjs",
   "outputDirectory": ".next",
-  "build": {
-    "env": {
-      "PRISMA_GENERATE_DATAPROXY": "true"
-    }
-  },
   "env": {
     "DATABASE_URL": "@database_url",
     "NODE_ENV": "production"
