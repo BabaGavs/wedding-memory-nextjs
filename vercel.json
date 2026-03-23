@@ -1,7 +1,7 @@
 {
   "version": 2,
   "name": "wedding-memory-nextjs",
-  "buildCommand": "prisma generate && next build",
+  "buildCommand": "npm install && npx prisma generate && npm run build",
   "devCommand": "next dev -H 0.0.0.0",
   "installCommand": "npm install",
   "framework": "nextjs",
