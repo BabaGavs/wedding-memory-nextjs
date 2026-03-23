@@ -1,13 +1,12 @@
 {
   "version": 2,
   "name": "wedding-memory-nextjs",
-  "buildCommand": "npm install && npx prisma generate && npm run build",
+  "buildCommand": "npm run build",
   "devCommand": "next dev -H 0.0.0.0",
   "installCommand": "npm install",
   "framework": "nextjs",
   "outputDirectory": ".next",
   "env": {
-    "DATABASE_URL": "@database_url",
     "NODE_ENV": "production"
   }
 }
