@@ -23,12 +23,10 @@
     "@types/node": "^25.5.0",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "@eslint/eslintrc": "^3.2.0",
-    "@eslint/js": "^9.15.0",
-    "@next/eslint-plugin-next": "^15.1.6",
     "@typescript-eslint/eslint-plugin": "^8.18.0",
     "@typescript-eslint/parser": "^8.18.0",
     "eslint": "^9.15.0",
+    "eslint-config-next": "15.1.6",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
