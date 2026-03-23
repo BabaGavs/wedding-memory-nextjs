@@ -3,7 +3,9 @@ import QRCode from 'qrcode'
 export async function generateQRCode(qrCode: string): Promise<string> {
   try {
     // Create full URL for the table page
-    const baseUrl = 'http://10.175.198.54:3000' // Local IP for mobile access
+    const baseUrl = process.env.NODE_ENV === 'production' 
+      ? 'https://wedding-memory-nextjs-babagavs.vercel.app' 
+      : 'http://10.175.198.54:3000' // Local IP for mobile access
     
     const fullUrl = `${baseUrl}/table/${qrCode}`
     
