@@ -47,33 +47,9 @@ export default function TablePage() {
   }
 
   const handleFileUpload = async (file: File, description: string) => {
-    setIsUploading(true)
-
-    try {
-      const formData = new FormData()
-      formData.append('file', file)
-      formData.append('description', description)
-
-      const response = await fetch(`/api/guest/upload/${params.qrCode}`, {
-        method: 'POST',
-        body: formData,
-      })
-
-      const data = await response.json()
-
-      if (data.success) {
-        alert('Dosya başarıyla yüklendi!')
-        setShowUploadModal(false)
-        fetchTable() // Refresh table data
-      } else {
-        alert('Yükleme başarısız: ' + (data.error || 'Bilinmeyen hata'))
-      }
-    } catch (error) {
-      console.error('Upload error:', error)
-      alert('Bir hata oluştu.')
-    } finally {
-      setIsUploading(false)
-    }
+    // Demo mode - just show success message
+    alert(`Dosya yüklendi (demo mod):\n${file.name}\n${description}`)
+    setShowUploadModal(false)
   }
 
   const openUploadModal = (type: 'photo' | 'video' | 'audio' | 'text') => {
